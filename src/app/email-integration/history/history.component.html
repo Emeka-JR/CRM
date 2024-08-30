@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <h2>Communication History</h2>
+  <ul class="list-group mb-3">
+    <li class="list-group-item" *ngFor="let email of emailHistory">
+      <strong>To:</strong> {{ email.to }}<br>
+      <strong>Subject:</strong> {{ email.subject }}<br>
+      <strong>Date:</strong> {{ email.date }}<br>
+      <p>{{ email.body }}</p>
+    </li>
+  </ul>
+</div>

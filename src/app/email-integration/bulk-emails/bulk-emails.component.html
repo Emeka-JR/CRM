@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <h2>Send Bulk Emails</h2>
+  <form (ngSubmit)="sendEmails()">
+    <div class="mb-3">
+      <label for="recipientList" class="form-label">Select Recipients</label>
+      <select id="recipientList" class="form-select" multiple [(ngModel)]="selectedRecipients" name="recipients">
+        <option *ngFor="let contact of contacts" [value]="contact.email">{{ contact.name }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="subject" class="form-label">Subject</label>
+      <input type="text" id="subject" class="form-control" placeholder="Email Subject" [(ngModel)]="subject" name="subject">
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Email Body</label>
+      <textarea id="body" class="form-control" rows="5" placeholder="Write your email here" [(ngModel)]="body" name="body"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Emails</button>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>{{ isEditing ? 'Edit' : 'Add' }} Task</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="taskTitle" class="form-label">Task Title</label>
+      <input type="text" id="taskTitle" formControlName="title" class="form-control" placeholder="Task Title">
+    </div>
+    <div class="mb-3">
+      <label for="taskDescription" class="form-label">Description</label>
+      <textarea id="taskDescription" formControlName="description" class="form-control" rows="3" placeholder="Task Description"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="dueDate" class="form-label">Due Date</label>
+      <input type="date" id="dueDate" formControlName="dueDate" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">Status</label>
+      <select id="status" formControlName="status" class="form-select">
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update' : 'Save' }} Task</button>
+  </form>
+</div>

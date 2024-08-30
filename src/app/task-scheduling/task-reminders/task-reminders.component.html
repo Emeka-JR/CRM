@@ -1,0 +1,9 @@
+<div class="container mt-4">
+  <h2>Task Reminders</h2>
+  <div class="list-group">
+    <a *ngFor="let task of reminders" [routerLink]="['/task-details', task.id]" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      {{ task.title }}
+      <span class="badge bg-warning rounded-pill">Reminder Set</span>
+    </a>
+  </div>
+</div>

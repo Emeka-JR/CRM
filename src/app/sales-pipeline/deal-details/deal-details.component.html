@@ -1,0 +1,16 @@
+<div class="container mt-4" *ngIf="deal">
+  <h2>Deal Details</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ deal.name }}</h5>
+      <p class="card-text">
+        <strong>Customer:</strong> {{ deal.customer }}<br>
+        <strong>Value:</strong> ${{ deal.value }}<br>
+        <strong>Expected Close Date:</strong> {{ deal.closeDate }}<br>
+        <strong>Stage:</strong> {{ deal.stage }}<br>
+        <strong>Status:</strong> {{ deal.status }}
+      </p>
+      <a [routerLink]="['/edit-deal', deal.id]" class="btn btn-primary">Edit Deal</a>
+    </div>
+  </div>
+</div>

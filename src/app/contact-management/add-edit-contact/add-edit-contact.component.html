@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h2>{{isEditMode? 'Edit Contact':'Add Contact'}}</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form); addContact(form.value)">
+    <!-- Existing fields -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" id="name" name="name" required ngModel #name="ngModel" class="form-control" placeholder="John Doe">
+      <div>
+        <small *ngIf="name.invalid && name.touched">*Name is a required field.</small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="company" class="form-label">Company</label>
+      <input type="text" id="company" required ngModel #company="ngModel" name="company" class="form-control" placeholder="ABC Corp">
+      <div>
+        <small *ngIf="company.invalid && company.touched">*Company is a required field.</small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" #email="ngModel" ngModel required name="email" class="form-control" placeholder="john@example.com">
+      <div>
+        <small *ngIf="email.invalid && email.touched">*Email is a required field.</small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="tel" id="phone" #phone="ngModel" ngModel required name="phone" class="form-control" placeholder="123-456-7890">
+      <div>
+        <small *ngIf="phone.invalid && phone.touched">*Phone is a required field.</small>
+      </div>
+    </div>
+    <!-- New Notes Section -->
+    <div class="mb-3">
+      <label for="notes" class="form-label">Notes</label>
+      <textarea id="notes" name="notes" ngModel #notes="ngModel" class="form-control" placeholder="Add notes here"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Contact</button>
+  </form>
+</div>

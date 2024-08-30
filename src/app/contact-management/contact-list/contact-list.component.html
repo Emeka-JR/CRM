@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between mb-3">
+    <h2>Contacts</h2>
+    <h4>Click for more details</h4>
+    
+    <button class="btn btn-primary" [routerLink]="['/add']">Add Contact</button>
+  </div>
+  <div class="list-group">
+    <a *ngFor="let contact of contacts" 
+       [routerLink]="contact.id ? ['/details', contact.id] : []" 
+       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      {{ contact.name }}
+      <span class="badge bg-primary rounded-pill">{{ contact.company }}</span>
+      <button class="btn btn-danger btn-sm ms-2" (click)="deleteContact(contact.id)">Delete</button>
+    </a>
+  </div>
+</div>

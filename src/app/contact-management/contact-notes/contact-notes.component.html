@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <h2>Contact Notes</h2>
+  <div *ngFor="let contact of contacts" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ contact.name }}</h5>
+      <p class="card-text">
+        <strong>Notes:</strong>
+        <ul>
+          <li *ngFor="let note of contact.notes">{{ note }}</li>
+        </ul>
+      <!-- </p> -->
+      <button class="btn btn-primary" [routerLink]="['/add-edit', contact.id]">Edit</button>
+    </div>
+  </div>
+</div>

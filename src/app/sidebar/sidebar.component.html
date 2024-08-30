@@ -1,0 +1,71 @@
+<!-- Sidebar Start -->
+<div class="sidebar pe-4 pb-3" [ngClass]="{'sidebar-hidden': isSidebarHidden}">
+    <nav class="navbar bg-light navbar-light">
+        
+            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>MY CRM</h3>
+        
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0">Jhon Doe</h6>
+                <span>Admin</span>
+            </div>
+        </div>
+        <div class="navbar-nav w-100">
+            <a routerLink="/dashboard" class="nav-item nav-link active" *ngIf="isLoggedIn"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="isLoggedIn"><i class="fa fa-laptop me-2"></i>Contacts</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a routerLink="/list" class="dropdown-item">Contact List</a>
+                    <a routerLink="/add-edit" class="dropdown-item">Add Contacts</a>
+                    <!-- <a href="/details" class="dropdown-item">Contact Details</a> -->
+                    <a routerLink="/notes" class="dropdown-item">Contact Notes</a>
+                    <!-- <a href="/tags" class="dropdown-item">Contact Tags</a> -->
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="isLoggedIn"><i class="fa fa-laptop me-2"></i>Sales Pipeline</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a routerLink="/sales" class="dropdown-item">Sales Overview</a>
+                    <a routerLink="/addSales" class="dropdown-item">Add/Edit Deal</a>
+                    <a routerLink="/dealList" class="dropdown-item">Deal List</a>
+                    <a routerLink="/dealDetails" class="dropdown-item">Deal Details</a>
+                    <a routerLink="/dealStages" class="dropdown-item">Deal Stages</a>
+                </div>
+            </div>
+
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="isLoggedIn"><i class="fa fa-laptop me-2"></i>Emails</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a routerLink="/bulk" class="dropdown-item">Send Emails</a>
+                    <a routerLink="/history" class="dropdown-item">History</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="isLoggedIn"><i class="fa fa-laptop me-2"></i>Tasks</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a routerLink="/taskList" class="dropdown-item">Tasks List</a>
+                    <a routerLink="/taskDetails" class="dropdown-item">Task Details</a>
+                    <a routerLink="/addTasks" class="dropdown-item">Add/Edit Tasks</a>
+                    <a routerLink="/taskCalendar" class="dropdown-item">Calendar</a>
+                    <a routerLink="/taskReminder" class="dropdown-item">Reminders</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="isLoggedIn"><i class="far fa-file-alt me-2"></i>Reports</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a routerLink="/salesReport" class="dropdown-item">Sales Report</a>
+                    <a routerLink="/interactions" class="dropdown-item">Customer Interactions</a>
+                    <a routerLink="/scheduledReports" class="dropdown-item">Scheduled Reports</a>
+                    <a routerLink="blank.html" class="dropdown-item">Blank Page</a>
+                </div>
+            </div>
+            <a routerLink="/login" *ngIf="!isLoggedIn">LOGIN</a>
+        </div>
+    </nav>
+</div>
+<!-- Sidebar End -->
+

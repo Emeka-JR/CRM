@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2>All Deals</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Value</th>
+        <th scope="col">Stage</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let deal of deals">
+        <td>{{ deal.name }}</td>
+        <td>{{ deal.customer }}</td>
+        <td>${{ deal.value }}</td>
+        <td>{{ deal.stage }}</td>
+        <td>{{ deal.status }}</td>
+        <td>
+          <a [routerLink]="['/deal-details', deal.id]" class="btn btn-link">View</a>
+          <a [routerLink]="['/add-edit-deal', deal.id]" class="btn btn-link">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

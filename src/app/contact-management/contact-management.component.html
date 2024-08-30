@@ -1,0 +1,15 @@
+<!-- <app-add-edit-contact
+[isEditMode]="receiveEdit($event)"
+[selectedContact]="selectedContact"
+></app-add-edit-contact> -->
+
+<app-contact-details
+(editMode)="receiveEdit($event)"
+(selectedContact)="receiveContact($event)"
+></app-contact-details>
+
+
+<app-add-edit-contact
+[isEditMode]="editModeDetails"
+[selectedContact]="selectedContactDetails"
+></app-add-edit-contact>
